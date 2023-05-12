@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+nav{
+    background: #459a96;
+    height: 95px;
+    width: 100%;
+}
+.enlace{
+    position: absolute;
+    padding: 10px 50px;
+}
+.logo{
+    height: 80px;
+}
+nav ul{
+    float: right;
+    margin-right: 60px;
+}
+nav ul li{
+    display: inline-block;
+    line-height: 95px;
+    max-width: 0 5px;
+}
+nav ul li a{
+    color: #fff;
+    font-size: 18px;
+    padding: 7px 13px;
+    border-radius: 15px;
+    text-transform: uppercase;
+}
+li a.active, li a:hover{
+    background: #3a5f6f;
+    transition: .5s;
+}
