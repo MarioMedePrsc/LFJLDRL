@@ -1,0 +1,179 @@
+/*==========HEADER==============*/
+.div-botones-header{
+    display: flex;
+    justify-content: space-evenly;
+}
+.boton-header{
+    background-color: #3a5f6f;
+    color: #fff;
+    width: 220px;
+    height: 34px;
+    border-radius: 20px;
+    border: 2px solid black;
+}
+.boton-header:hover{
+    background-color: #557786;
+}
+.titulos-subtitulos-botones{
+    font-family: 'League Spartan';
+    font-size: 30px;
+}
+.titulos-subtitulos-botones2{
+    font-family: 'League Spartan';
+    font-size: 25px;
+}
+.provicional{
+    display: flex;
+    justify-content: space-around;
+}
+.provicional2{
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+.div-input-header{
+    border: #999999 solid 2.5px;
+    border-radius: 5px;
+}
+.div-input-header input{
+    border: none;
+    height: 30px;
+}
+.header-input-button{
+    padding-bottom: 1px;
+    background-color: white;
+    border: #212121 none 1px;
+    border-radius: 50%;
+}
+
+
+
+.logo{
+    padding: 10px 0 0 50px;
+}
+.logo img{
+    height: 100px;
+    width: 150px;
+}
+
+.textos-font{
+    font-family: 'Inter';
+    font-size: 16px;
+}
+.bold{
+    font-weight: 700;
+}
+.bold2{
+    font-weight: 500;
+}
+
+.boton-empleo{
+    background-color: #a621e9;
+    color: #fff;
+    width: 180px;
+    height: 35px;
+    border-radius: 10px;
+    font-size: 18px;
+    padding: 0px;
+    margin: 0px;
+    border: 0px solid #3a5f6f;
+}
+.boton-empleo:hover{
+    background-color: #8c37b7;
+}
+
+
+/*====================CUADRO DE VACANTES Y ENTREVISTAS PENDIENTES==========================*/
+.contenedor-principal{
+	width: 90%;
+	max-width: 1400px;
+	margin: auto;
+	padding: 0px 0;
+	display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
+    /*background-color: yellow;*/
+}
+.contenedor-principal-titulos{
+    display: flex;
+    justify-content: space-evenly;
+}
+.contenedor-principal-titulos h4{
+    display: inline;
+}
+.contenedor-secundario{
+	display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 0px 0 0px 0;
+    border-radius: 20px;
+    /*background-color: antiquewhite;*/
+}
+.contenedor-terciario{
+	border-radius: 10px;
+	min-height: 200px;
+    max-height: 500px;
+	padding: 20px;
+    /*background-color: aqua;*/
+    border: 3px solid #999999;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+	/*font-weight: bold;*/
+	/*position: relative;
+	overflow: hidden;
+	background-size: cover;
+	background-position: center center;*/
+    overflow-y: scroll;
+}
+.contenedor-terciario::-webkit-scrollbar{
+    width: 10px;
+    background: #4dd1c2;
+    border-radius: 10px;
+}
+.contenedor-terciario::-webkit-scrollbar-thumb{
+    background: #238b7f;
+    border-radius: 10px;
+}
+.contenedor-terciario::-webkit-scrollbar-thumb:hover{
+    background:#1d7469;
+}
+.texto{
+    /*background-color: tomato;*/
+    padding: 10px;
+    border: #212121 solid 3px;
+    border-radius: 20px;
+    max-height: 200px;
+}
+.dentro-texto{
+    display: flex;
+    justify-content: space-between;
+}
+.dentro-texto h4{
+    text-align: center;
+}
+.dentro-texto img{
+    height: 60px;
+    width: 60px;
+    margin-right: 20px;
+}
+
+
+/*========FOOTER========*/
+footer{
+    background:#34baab ;
+    padding: 10px  0 30px 0;
+    margin: auto;
+    overflow: hidden;
+}
+.titulo-final{
+    text-align: center;
+    font-size: 24px;
+    margin: 20px 0 0 0;
+    color: #fff;
+}
+
+
+
