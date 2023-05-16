@@ -17,24 +17,31 @@
         <h1>Crea tu cuenta como Empleador</h1>
         <form>
             <p>Eres Trabajador? &nbsp <a href="Registro_Trabajadores.html">Registrate Aquí</a></p>
-            <label for="nombre">Nombre(s):</label>
-            <input class="Controles" type="text" id="nombre" required>
 
-            <label for="apellidos">Apellidos:</label>
-            <input class="Controles" type="text" id="apellidos" required>
+            <div class="nombre-apeliido">
+                <div class="input-nombre">
+                    <label for="nombre" style="text-align: left;">Nombre(s):</label>
+                    <input class="Controles" type="text" id="nombre" required>
+                </div>
+                <div class="input-apellidos">
+                    <label for="apellidos" style="text-align: left;" >Apellidos:</label>
+                    <input class="Controles" type="text" id="apellidos" required>
+                </div>
+            </div>
 
-            <label for="correo">Correo electrónico:</label>
-            <input class="Controles" type="email" id="correo" required>
+            <div>
+            <label for="correo" style="text-align: left;">Correo electrónico:</label>
+            <input class="Controles1" type="email" id="correo" required>
 
-            <label for="contrasena">Contraseña:</label>
-            <input class="Controles" type="password" id="contrasena" required>
+            <label for="contrasena" style="text-align: left;">Contraseña:</label>
+            <input class="Controles1" type="password" id="contrasena" required>
 
-            <label for="confirmar-contrasena">Confirmar Contraseña:</label>
-            <input class="Controles" type="password" id="confirmar-contrasena" required>
+            <label for="confirmar-contrasena" style="text-align: left;">Confirmar Contraseña:</label>
+            <input class="Controles1" type="password" id="confirmar-contrasena" required>
 
-            <label for="telefono">Número de teléfono:</label>
-            <input class="Controles" type="telefono" id="telefono" required>
-
+            <label for="telefono" style="text-align: left;">Número de teléfono:</label>
+            <input class="Controles1" type="telefono" id="telefono" required>
+            </div>
 
             <br><input class="boton" type="submit" value="Registar"></input>
         </form>
