@@ -11,7 +11,7 @@ body {
     background-color: white;
     border-radius: 8%;
     width: 600px;
-    height: 625px;
+    height: 550px;
     padding: 70px;
     display: flex;
     flex-direction: column;
@@ -88,4 +88,21 @@ button[type="submit"] {
 h1{
     color: #243757;
     font-size: 38px;
+}
+.nombre-apeliido{
+    display: flex;
+}
+.input-nombre{
+    margin-right: 10px;
+}
+.input-apellidos{
+    margin-left: 10px;
+}
+.Controles1{
+    width: 533px;
+    background: #e3e7e4;
+    padding: 4px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #3a5f6f;
 }

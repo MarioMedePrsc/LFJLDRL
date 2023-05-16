@@ -15,33 +15,38 @@
     <div class="container">
 
         <h1>Crea tu cuenta como Trabajador</h1>
+
+            <p style="align-items: end;">Eres Empleador? &nbsp <a href="Registro_Empleadores.html">Registrate Aquí</a></p>
+
         <form>
-            <p>Eres Empleador? &nbsp <a href="Registro_Empleadores.html">Registrate Aquí</a></p>
 
             <div class="nombre-apeliido">
                 <div class="input-nombre">
-                    <label for="nombre">Nombre(s):</label>
+                    <label for="nombre" style="text-align: left;">Nombre(s):</label>
                     <input class="Controles" type="text" id="nombre" required>
                 </div>
                 <div class="input-apellidos">
-                    <label for="apellidos">Apellidos:</label>
+                    <label for="apellidos" style="text-align: left;" >Apellidos:</label>
                     <input class="Controles" type="text" id="apellidos" required>
                 </div>
             </div>
+            <div>
+            <label for="correo" style="text-align: left;">Correo electrónico:</label>
+            <input class="Controles1" type="email" id="correo" required>
 
-            <label for="correo">Correo electrónico:</label>
-            <input class="Controles" type="email" id="correo" required>
+            <label for="contrasena" style="text-align: left;">Contraseña:</label>
+            <input class="Controles1" type="password" id="contrasena" required>
 
-            <label for="contrasena">Contraseña:</label>
-            <input class="Controles" type="password" id="contrasena" required>
+            <label for="confirmar-contrasena" style="text-align: left;">Confirmar Contraseña:</label>
+            <input class="Controles1" type="password" id="confirmar-contrasena" required>
 
-            <label for="confirmar-contrasena">Confirmar Contraseña:</label>
-            <input class="Controles" type="password" id="confirmar-contrasena" required>
+            <label for="fecha-nacimiento"style="text-align: left;">Fecha de Nacimiento:</label>
+            <input class="Controles1" type="date" id="fecha-nacimiento" required>
+            </div>
 
-            <label for="fecha-nacimiento">Fecha de Nacimiento:</label>
-            <input class="Controles" type="date" id="fecha-nacimiento" required>
-
-            <label for="pais">País:</label>
+            <div class="pais-genero">
+            <div class="input-pais">
+            <label for="pais"style="text-align: left;">País:</label>
             <select class="Controles" id="pais" required>
                 <option value="">Seleccionar país</option>
                 <option value="Argentina">Argentina</option>
@@ -51,16 +56,19 @@
                 <option value="Estados Unidos">Estados Unidos</option>
                 <option value="México">México</option>
             </select>
-
-            <label for="Género">Género:</label>
+            </div>
+            <div class="input-genero">
+            <label for="Género"style="text-align: left;">Género:</label>
             <select class="Controles" id="Género" required>
                 <option value="">Seleccionar</option>
                 <option value="Masculino">Masculino</option>
                 <option value="Femenino">Femenino</option>
                 <option value="Otro">Otro</option>
             </select><br>
+            </div>
+            </div>
 
-            <label for="Curriculum">Currículum:</label>
+            <label for="Curriculum"style="text-align: left;">Currículum:</label>
             <input type="file"id="curriculum" required><br><br>
 
             <input class="boton" type="submit" value="Registar"></input>
