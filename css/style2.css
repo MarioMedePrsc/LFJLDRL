@@ -89,3 +89,12 @@ h1{
     color: #243757;
     font-size: 38px;
 }
+.nombre-apeliido{
+    display: flex;
+}
+.input-nombre{
+    margin-right: 10px;
+}
+.input-apellidos{
+    margin-left: 10px;
+}
