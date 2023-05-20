@@ -7,7 +7,7 @@ class StarterController{
         session_start();
     }
 
-    public function redirect(){
+    public function redirectLogin(){
         header("location: C_UsuarioController.php?action=login");
     }
 }

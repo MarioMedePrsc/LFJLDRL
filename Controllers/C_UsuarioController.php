@@ -65,7 +65,7 @@ class UsuarioController extends Usuario {
             echo "ERROR!! el usuario no existe";
         }else if(password_verify($password, $usuario["password_emple"])){
             echo "Sesión iniciada con éxito";
-            $_SESSION['id'] = $usuario["id_emple"];
+            $_SESSION['id'] = $usuario["id_empleador"];
             $_SESSION['nombre'] = $usuario["nombre_emple"];
             $_SESSION['correo'] = $usuario["correo_emple"];
             $_SESSION['rol'] = $rol;
@@ -76,8 +76,11 @@ class UsuarioController extends Usuario {
         }
     }
     public function CerrarSesion(){
+        @session_start();
         session_destroy();
+        echo "<script>alert('Sesion Cerrada con éxito');</script>";
         header("location: ../index.php");
+        
     }
 
 }
@@ -118,7 +121,6 @@ if(isset($_POST['action']) && $_POST['action']=='registrarTrabajador'){
         $_POST["telefono"],
         $ruta
     );
-    
 }
 if(isset($_POST['action']) && $_POST['action']=='registrarEmpleador'){
     $instanciaControlador = new UsuarioController();

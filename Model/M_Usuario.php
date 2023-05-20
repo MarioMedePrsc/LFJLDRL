@@ -45,6 +45,7 @@ class Usuario {
             $resultado = mysqli_query($conexion, $consulta);
         }
         $objetoConsulta = mysqli_fetch_assoc($resultado);
+        $conexion = null;
         return $objetoConsulta;
     }
 }
