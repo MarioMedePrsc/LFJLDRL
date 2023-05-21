@@ -191,7 +191,10 @@ header{
 }
 .persona-n2{
     display: flex;
-    margin: 20px 10px 10px 20px;
+    margin: 20px 10px 10px 10px;
+}
+.persona-n2:hover{
+    background-color: #c4c8c5;
 }
 .fotografia-de-la-persona{
     margin-right: 10px;
@@ -204,10 +207,11 @@ header{
     /*background-color: palegreen;*/
     width: 90%;
     height: 85%;
+    max-height: 85%;
     margin: auto;
     border: 2px solid #a4a4a4;
     border-radius: 20px;
-    box-shadow: -10px -10px #b0b3b3;
+    box-shadow: -5px -5px #b0b3b3;
 }
 .titulo-contenedor-terciario{
     display: flex;
@@ -221,17 +225,32 @@ header{
 .subtitulo-contenedor-terciario{
     display: flex;
     justify-content: center;
-    height: 50px;
-    margin: 0px 10px 10px 10px;
+    height: 20px;
+    margin: 0px 10px 5px 10px;
 }
 .subtitulo-contenedor-terciario h4{
     margin: 5px 10px 10px 10px;
 }
 
+
+.subtitulo-contenedor-de-informacion1{
+    display: flex;
+    justify-content: space-around;
+    height: 25px;
+    margin: 0px 10px 10px 10px;
+    font-family: 'Inter';
+    font-size: 17px;
+}
+.subtitulo-contenedor-de-informacion1 h4{
+    margin: 5px 10px 10px 10px;
+}
+
+
+
 .contenido-principal1-formulario-contenedor-terciario{
     display: flex;
     justify-content: space-around;
-    margin: 30px 30px 15px 30px;
+    margin: 20px 30px 5px 30px;
 }
 .contenido-principal2-formulario-contenedor-terciario{
     display: flex;
@@ -267,7 +286,7 @@ header{
     font-size: 18px;
 }
 .dato1{
-    width: 50px;
+    width: 150px;
     height: 25px;
     border-radius: 5px;
     border: 2px solid black;
@@ -350,7 +369,18 @@ header{
     display: flex;
     margin: 10px 10px 10px 20px;
 }
-
+.boton-formulario-abajo-aceptar{
+    background-color: #3a5f6f;
+    color: #fff;
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    border: 2px solid  #466067;
+    font-size: 20px;
+}
+.boton-formulario-abajo-aceptar:hover{
+    background-color: #557786;
+}
 
 
 
