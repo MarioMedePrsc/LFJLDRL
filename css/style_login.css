@@ -104,7 +104,16 @@ a{
     color: var(--blanco);
 }
 
+.centro{
+    display: flex;
+    justify-content: center;
+}
+
 /* --------------- ELEMENTOS --------------- */
+h2{
+    margin: 2rem 0;
+}
+
 .logo{
     width: 25rem;
     height: 25rem;
@@ -124,9 +133,53 @@ a{
     text-align: center;
 }
 
+.bttn_redondo_azul{
+    border-radius: 2rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1rem;
+    background-color: #3A5F6F;
+    color: var(--blanco);
+    border-style: none;
+    margin-top: 2rem;
+}
+
+.bttn-izq{
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 1rem;
+    border-style: none;
+    border: 3px solid #4E8D96;
+}
+
+.bttn-der{
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 1rem;
+    border-style: none;
+    border: 3px solid #4E8D96;
+}
+
+
+
 /* --------------- FOOTER --------------- */
 .footer{
     background-color: #4E9693;
     text-align: center;
     margin-top: auto;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.ultimo{
+    margin-bottom: 10rem;
 }

@@ -126,10 +126,6 @@ a{
     margin: 2rem;
 }
 
-.ultimo{
-    margin-bottom: 10rem;
-}
-
 .bttn_redondo_azul{
     border-radius: 2rem;
     font-family: 'Inter', sans-serif;
@@ -146,6 +142,10 @@ a{
 }
 
 /* --------------- ELEMENTOS --------------- */
+h2{
+    margin: 2rem 0;
+}
+
 .logo{
     width: 25rem;
     height: 25rem;
@@ -193,4 +193,8 @@ p.texto-menor{
     bottom: 0;
     left: 0;
     width: 100%;
+}
+
+.ultimo{
+    margin-bottom: 10rem;
 }
