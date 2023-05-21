@@ -6,14 +6,38 @@
 /*body{
     font-family: 'Inter';
 }*/
+.logo-empresa{
+    height: 100px;
+    width: 150px;
+}
+.personas-postuladas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+    height: 70px;
+    background-color: #3a5f6f;
+    color: #fff;
+    border-radius: 50px;
+    box-shadow: 5px 10px #e3e4e4;
+}
+.span-header{
+    height: 100px;
+    width: 150px;
+}
+.span-header2{
+    height: 100px;
+    width: 150px;
+}
+
+/*=============HEADER==================*/
 header{
     display: flex;
-    position: relative;
-    height: 150px;
+    justify-content: space-between;
+    align-items: center;
+    /*background-color: aqua;*/
 }
-.logo{
-    padding: 10px 0 0 50px;
-}
+
 
 /*===========INTERFAZ 9===========*/
 /*===========TITULOS===========*/
@@ -38,16 +62,7 @@ header{
     justify-content: center;
     align-items: center;
 }
-.span-header{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 700px;
-    height: 70px;
-    background-color: #459a96;
-    border-radius: 50px;
-    box-shadow: 5px 10px #e3e4e4;
-}
+
 
 
 /*===========FORMULARIO===========*/
