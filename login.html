@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="css.normalize.css">
+    <link rel="preload" href="css/normalize.css" as="style">
+
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=League+Spartan:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="preload" href="css/style_login.css" as="style">
+    <link rel="stylesheet" href="css/style_login.css" as="style">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>        
+    <div class="grid3">
+        <img class="logo" src="images/Logo.jpg">
+
+        <section class="contenedor sombra">
+            <h2 class="titulo">Iniciar Sesión</h2>
+            <p>Correo electrónico:</p>
+            <input type="text">
+            <br><br>
+            <p>Contraseña:</p>
+            <section class="grid2">
+                <input type="password" class="password" id="password"><img class="icono_ojo" id="eye_password" src="images/closed_eye.png">
+            </section>
+            <br><br>
+            <section class="grid2">
+                <button class="blue-button bttn-izq" id="bttnEmpleador">Empleador</button>
+                <button class="white-button bttn-der" id="bttnTrabajador">Trabajador</button>
+            </section>
+            <section class="centro">
+                <button class="bttn_redondo_azul" id="bttn_login">Iniciar Sesión</button>
+            </section>
+        </section>
+
+        <section class="registro ultimo">
+            <p>¿No tienes cuenta?</p>
+            <a class="texto-menor" href="registro_Trabajadores.html">Registrarse como trabajador</a><br>
+            <a class="texto-menor" href="registro_Empleadores.html">Registrarse como empleador</a>
+        </section>
+    </div>
+
+    <div class="footer">
+        <p class="blanco footer-text">LFJLDRL © 2023</p>
+    </div>
+
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script src="js/interfaz_login.js"></script>
+</body>
+
+
+
+</html>
