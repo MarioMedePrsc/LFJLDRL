@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=League Spartan' rel='stylesheet'>
-    <link rel="stylesheet" href="../../css/style01.css">
+    <link rel="stylesheet" href="../css/style01.css">
     <title>LFJLDRL</title>
 </head>
 <body>
