@@ -89,19 +89,23 @@
                 <?php 
                 while($postulado = mysqli_fetch_assoc($lista_postulados)){
                 ?>
+                <a href="../Controllers/C_Empleador.php?VerVacante=<?php echo $postulado["id_vacante"]; ?>&IdPostulado=<?php echo $postulado['id_trabajador']; ?>">
+
+                
                 <button class="boton-personas-contenedor-principal">
                     <div class="persona-n1">
                         <img src="imagenes/Persona1.png" alt="Foto de la persona" class="fotografia-de-la-persona">
                         <h4 class="textos2"><?php echo $postulado["nombre_postulado"]?></h4>
                     </div>
                 </button>
+                </a>
                 <?php
                 }
                 ?>
             </div>
         </div>
         <div class="contenedor-secundario-tabla">
-            if($infoPostulado==null){
+            <?php if($infoPostulado==null){
                 echo "Selecciona a un postulado para ver su información";
 
             }else{
@@ -186,6 +190,7 @@
                     </form>
                 </div>
             </div>
+            <?php } ?>
         </div>
         
     </div><br><br><br><br>
