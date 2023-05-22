@@ -35,3 +35,6 @@ li a.active, li a:hover{
     background: #3a5f6f;
     transition: .5s;
 }
+.links{
+    text-decoration: none;
+}
