@@ -9,21 +9,23 @@
     <title>LFJLDRL Interfaz 5</title>
 </head>
 <body>
-    <header><br>
-        <a href="../Controllers/C_Trabajador.php?action=inicio">Volver al inicio</a>
-        <form action="../Controllers/C_UsuarioController.php" method="POST">
+    <header>
+        
+        <div class="header-b">
+            
+        <form action="../Controllers/C_UsuarioController.php" method="POST" style="float:right; margin-top:10px; margin-right: 10px;">
             <input type="hidden" name="action" value="CerrarSesion" />
             <button type="submit">CerrarSesion</button>
         </form>
-        <div class="header-b">
-            <a href="#" class="logo">
-                <img src="imagenes/Logo.jpeg" alt="Logo-empresa">
+            <a href="../Controllers/C_Trabajador.php?action=inicio" class="logo">
+                <img src="../imagenes/logo.png" alt="Logo-empresa">
             </a>
             <div class="div-botones-header">
                 <button class="boton-header">BUSCAR EMPLEO</button>
                 <button class="boton-header">BUSCAR CANDIDATOS</button>
                 <button class="boton-header">EMPRESA/PUBLICAR EMPLEOS</button>
             </div><br>
+            
         </div>
         
         <nav>
