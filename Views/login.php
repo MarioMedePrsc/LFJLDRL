@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html>
     <head>
         <title>Iniciar Sesion</title>
@@ -19,4 +19,4 @@
             <button type="submit">Iniciar Sesiòn</button>
         </form>
     </body>
-</html>
+</html>-->
