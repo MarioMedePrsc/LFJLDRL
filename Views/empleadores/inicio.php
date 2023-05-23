@@ -22,6 +22,11 @@
 </head>
 <body>
 
+<div >
+    <a href="../Controllers/C_Empleador.php?action=inicio" >  
+        <img class="logo" src="../imagenes/logo.png" style="position: absolute; float: left; top:0px;"></a>
+    </div>
+
 <header  style="position: fixed; right: 10px; font-family: 'Inter','League Spartan'; z-index: 3; background-color: white; border-radius: 0px 0px 0px 10px; ">
         
         <!--NAVBAR-->
@@ -36,17 +41,26 @@
         </div>
         </div>
         <!--FIN DEL NAVBAR-->
-    </header> <br/><br/>  
-        <a href="../Controllers/C_Empleador.php?action=inicio">  
-    <img class="logo" src="../imagenes/logo.png"></a> 
+        
+    </header> <br/><br/> 
+    
+    
+        
     <section class="centro">
         <div class="sombra"><h2>Vacantes Postuladas</h2></div>
     </section>
-    <section class="busqueda">
-        <div></div><div></div>
+    <br>
+    <section class="busqueda"  >
+        <div >
+        <h2>Vacantes activas que has postulado:</h2>
+        </div>
+        <div >
         <a href="../Controllers/C_Empleador.php?action=PostularVacante">
         <button class="globo-menta">+ Nueva vacante</button></a>
+        </div>
     </section>
+    
+    
     <section class="grid3">
         <?php 
         //MOSTRAR DATOS
