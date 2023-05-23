@@ -56,7 +56,7 @@
                     <button class="boton" type="submit">Enviar</button>
                 </div>
 
-                <p>¿Ya eres miembro de LFJLDRL? <a href="#" class="abajo-iniciar-sesion">Iniciar Sesion</a></p>
+                <p>¿Ya eres miembro de LFJLDRL? <a href="../Controllers/C_UsuarioController.php?action=login" class="abajo-iniciar-sesion">Iniciar Sesion</a></p>
             </form>
         </div>
     </div><br><br><br>
