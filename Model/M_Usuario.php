@@ -12,26 +12,39 @@ class Usuario {
     protected $genero;
     protected $telefono;
     protected $ruta;
+    protected $rutaPerfil;
     protected $rol;
 
     protected function insertTrabajador(){
         $ic = new Connection;
         $conexion = $ic->openConnection();
-        $insertarSQL = "INSERT INTO trabajador(correo_trab, password_trab, nombre_trab, apellido_trab, fecha_nacimiento, pais_trab, genero_trab, tel_trab, CV_trab) VALUES ('$this->email','$this->password','$this->nombre','$this->apellidos','$this->fechaNacimiento','$this->pais','$this->genero','$this->telefono','$this->ruta')";
-        $resultado = mysqli_query($conexion,$insertarSQL);
+        $consulta = "SELECT * FROM trabajador WHERE correo_trab='$this->email'";
+        $resultado = mysqli_query($conexion,$consulta);
+        if((mysqli_num_rows($resultado))==0){
+            $insertarSQL = "INSERT INTO trabajador(correo_trab, password_trab, nombre_trab, apellido_trab, fecha_nacimiento, pais_trab, genero_trab, tel_trab, CV_trab, foto_perfil) VALUES ('$this->email','$this->password','$this->nombre','$this->apellidos','$this->fechaNacimiento','$this->pais','$this->genero','$this->telefono','$this->ruta','$this->rutaPerfil')";
+            $resultado = mysqli_query($conexion,$insertarSQL);
+        }else{
+            echo "<script>alert('Error!, ya existe un usuario registrado con ese correo');</script>";
+            $resultado=null;
+        }
         $conexion = null;
+        return $resultado;
     }
     protected function insertEmpleador(){
         $ic = new Connection;
         $conexion = $ic->openConnection();
-        $insertarSQL = "INSERT INTO empleador(correo_emple, password_emple, nombre_emple, apellidos_emple, tel_emple) VALUES ('$this->email','$this->password','$this->nombre','$this->apellidos','$this->telefono')";
-        $resultado = mysqli_query($conexion,$insertarSQL);
-        if($resultado){
-            echo "<script>alert('Empleador registrado con exito');</script>";
-        }else {
-            echo "<script>alert('ERROR!! inesperado, no se pudo registrar');</script>";
+        $consulta = "SELECT * FROM empleador WHERE correo_emple='$this->email'";
+        $resultado = mysqli_query($conexion,$consulta);
+        if((mysqli_num_rows($resultado))==0){
+            $insertarSQL = "INSERT INTO empleador(correo_emple, password_emple, nombre_emple, apellidos_emple, tel_emple) VALUES ('$this->email','$this->password','$this->nombre','$this->apellidos','$this->telefono')";
+            $resultado = mysqli_query($conexion,$insertarSQL);
+        }else{
+            echo "<script>alert('Error!, ya existe un usuario registrado con ese correo');</script>";
+            $resultado=null;
         }
+        
         $conexion = null;
+        return $resultado;
     }
 
     protected function SearchUsuarioForName(){

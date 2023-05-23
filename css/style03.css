@@ -255,12 +255,12 @@ header{
 .contenido-principal2-formulario-contenedor-terciario{
     display: flex;
     justify-content: space-around;
-    margin: 30px 30px 15px 30px;
+    margin: 30px 30px 5px 30px;
 }
 .contenido-principal3-formulario-contenedor-terciario{
     display: flex;
     justify-content: center;
-    margin: 30px 30px 30px 30px;
+    margin: 5px 30px 5px 30px;
 }
 
 .centrar-contenid-formulario2{

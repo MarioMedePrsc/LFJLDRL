@@ -12,11 +12,11 @@
     <header>
         <div class="div-logo">
             <a href="#" class="logo">
-                <img src="imagenes/Logo.jpeg" alt="Logo-empresa" class="logo-empresa">
+                <img src="../imagenes/logo.png" alt="Logo-empresa" class="logo-empresa">
             </a>
         </div>
         <div class="personas-postuladas">
-            <h4 class="titulos-subtitulos-botones">Personas Postuladas</h4>
+            <h4 class="titulos-subtitulos-botones">Vacante</h4>
         </div>
         <span class="span-header"></span>
     </header>
@@ -94,7 +94,7 @@
                 
                 <button class="boton-personas-contenedor-principal">
                     <div class="persona-n1">
-                        <img src="imagenes/Persona1.png" alt="Foto de la persona" class="fotografia-de-la-persona">
+                        <img src="../<?php echo $postulado["foto_postulado"]?>" alt="Foto de la persona" class="fotografia-de-la-persona">
                         <h4 class="textos2"><?php echo $postulado["nombre_postulado"]?></h4>
                     </div>
                 </button>
@@ -113,7 +113,7 @@
             <div class="contenido-contenedor-secundario">
                 <div class="personas-contenedor-secundario">
                     <div class="persona-n2">
-                        <img src="imagenes/Persona1.png" alt="Foto de la persona" class="fotografia-de-la-persona">
+                        <img src="../<?php echo $infoPostulado["foto_perfil"]; ?>" alt="Foto de la persona" class="fotografia-de-la-persona">
                         <h4 class="textos2"><?php echo $infoPostulado["nombre_trab"]; ?></h4>
                     </div>
                 </div>
@@ -125,12 +125,12 @@
                 <div class="subtitulo-contenedor-de-informacion1">
                     <h4 class=""><?php echo $infoPostulado["nombre_trab"]; ?></h4>
                     <h4 class=""><?php echo $infoPostulado["apellido_trab"]; ?></h4>
-                    <h4 class="">Genero:<?php echo $infoPostulado["genero_trab"]; ?></h4>
+                    <h4 class="">Genero: <?php echo $infoPostulado["genero_trab"]; ?></h4>
                 </div>
                 <div class="subtitulo-contenedor-de-informacion1">
-                    <h4 class="">Correo:<?php echo $infoPostulado["correo_trab"]; ?></h4>
-                    <h4 class="">Tel:<?php echo $infoPostulado["tel_trab"]; ?></h4> 
-                    <h4 class="">Pais:<?php echo $infoPostulado["pais_trab"]; ?></h4>
+                    <h4 class="">Correo: <?php echo $infoPostulado["correo_trab"]; ?></h4>
+                    <h4 class="">Tel: <?php echo $infoPostulado["tel_trab"]; ?></h4> 
+                    <h4 class="">Pais: <?php echo $infoPostulado["pais_trab"]; ?></h4>
                 </div>
                 <div class="subtitulo-contenedor-de-informacion1">
                     <h4 class="">Fecha de nacimiento:<?php echo $infoPostulado["fecha_nacimiento"]; ?></h4>
@@ -144,13 +144,14 @@
                 </div>
                 <div class="formulario-contenedor-terciario">
                     <form action="../Controllers/C_Empleador.php" method="POST" class="form-del-contenedor-terciario">
+                    <input type="hidden" name="E_IdVacante" value="<?php echo $infoVacante["id_vacante"]; ?>">
+                    <input type="hidden" name="E_IdTrabajador" value="<?php echo $infoPostulado["id_trabajador"]; ?>"/>
+                    <input type="hidden" name="nombreVac" value="<?php echo $infoVacante["nombre_vac"]; ?>">
+                    <input type="hidden" name="nombreTrab" value="<?php echo $infoPostulado["nombre_trab"]; ?>"/>
+                        
 
                         <div class="contenido-principal1-formulario-contenedor-terciario textos">
                             <div class="contenido-formulario-contenedor-terciario1">
-                                <input type="hidden" name="E_IdVacante" value="<?php echo $infoVacante[" id_vacante"]; ?>">
-                                <input type="hidden" name="E_IdTrabajador" value="<?php echo $infoPostulado[" id_trabajador"]; ?>"/>
-                                <input type="hidden" name="nombreVac" value="<?php echo $infoVacante[" nombre_vac"]; ?>">
-                                <input type="hidden" name="nombreTrab" value="<?php echo $infoPostulado[" nombre_trab"]; ?>"/>
                                 <div class="centrar-contenid-formulario1"><label for="dia">Dia:</label><br></div>
                                 <input class="dato1" id="dia" type= "date" name="dia"/>
                             </div>
@@ -181,7 +182,7 @@
                             </div>
                         </div>
 
-                        <br><br>
+                        
                         <div class="contenido-principal3-formulario-contenedor-terciario">
                             <button type="submit" class="boton-formulario-aceptar">Agendar</button>
                         </div>
@@ -202,10 +203,11 @@
     </div><br><br><br>
 
     <div class="tabla-de-entrevistas-pendientes">
-        <div class="perfil-entrevista-pendiente">
-            <?php
+    <?php
                 while($entrevista = mysqli_fetch_assoc($lista_entrevistas)){
                     ?>
+        <div class="perfil-entrevista-pendiente">
+           
             <div class="perfil-entrevistado">
                 <div class="persona-n3">
                     <img src="imagenes/Persona1.png" alt="Foto de la persona" class="fotografia-de-la-persona">
@@ -233,10 +235,11 @@
                 <button type="submit" class="boton-formulario-abajo-aceptar">Cancelar</button>
             </form>
 
-            <?php
+            
+        </div>
+        <?php
                 }
                 ?>
-        </div>
     </div><?php
         ?>
 

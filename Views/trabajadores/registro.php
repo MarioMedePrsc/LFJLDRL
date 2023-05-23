@@ -28,7 +28,8 @@
                 <option selected>Otro</option>
             </select><br/>
             <label>Telefono:</label><input type="text" name="telefono" placeholder="Escribe tu telefono"><br/>
-            <label>Curriculum</label><input type="file" name="CV"><br/>
+            <label>Foto de perfil:</label><input type="file" name="fotoPerfil" accept=".jpg,.jpeg"><br/>
+            <label>Curriculum</label><input type="file" name="CV" accept=".pdf"><br/>
             <button type="submit">Registrar</button>
         </form>
     </body>

@@ -16,7 +16,7 @@ class UsuarioController extends Usuario {
     public function ViewRegistroEmpleador(){
         require '../Views/empleadores/registro.php';
     }
-    public function SaveInfoForModel($nombre, $apellidos, $email, $password, $fechaNacimiento, $pais, $genero, $telefono, $ruta){
+    public function SaveInfoForModel($nombre, $apellidos, $email, $password, $fechaNacimiento, $pais, $genero, $telefono, $ruta, $rutaPerfil){
         $this -> nombre = $nombre;
         $this -> apellidos = $apellidos;
         $this -> email = $email;
@@ -26,7 +26,17 @@ class UsuarioController extends Usuario {
         $this -> genero = $genero;
         $this -> telefono = $telefono;
         $this -> ruta = $ruta;
-        $this -> insertTrabajador();
+        $this->  rutaPerfil=$rutaPerfil;
+        $usuario = $this -> insertTrabajador();
+        if($usuario == null){
+            echo "<script>window.history.back();</script>";   
+        }else if($usuario){
+            echo "<script>alert('Usuario registrado con éxito')</script>";
+            header("location: C_UsuarioController.php?action=login");
+        }else{
+            echo "<script>alert('ERROR!! no se pudo registrar el usuario')</script>";
+            echo "<script>window.history.back();</script>";
+        }
     }
     public function SaveInfoForEmpleador($nombre, $apellidos, $email, $password, $telefono){
         $this -> nombre = $nombre;
@@ -34,7 +44,16 @@ class UsuarioController extends Usuario {
         $this -> email = $email;
         $this -> password = $password;
         $this -> telefono = $telefono;
-        $this -> insertEmpleador();
+        $usuario= $this -> insertEmpleador();
+        if($usuario == null){
+            echo "<script>window.history.back();</script>";   
+        }else if($usuario){
+            echo "<script>alert('Usuario registrado con éxito')</script>";
+            header("location: C_UsuarioController.php?action=login");
+        }else{
+            echo "<script>alert('ERROR!! no se pudo registrar el usuario')</script>";
+            echo "<script>window.history.back();</script>";
+        }
     }
 
     public function VerifyLoginTrabajador($email,$password,$rol){
@@ -104,11 +123,16 @@ if(isset($_POST['action']) && $_POST['action']=='registrarTrabajador'){
     $instanciaControlador = new UsuarioController();
     /*ENCRIPTAR CONTRASEÑA */
     $password = password_hash($_POST['password'],PASSWORD_BCRYPT);
-
+    //SUBIR CV
     $nombre_base = basename($_FILES["CV"]["name"]);
     $nombre_final = date("m-d-y"). "-". date("H-i-s") . "-".$nombre_base;
-    $ruta = "archivos/" . $nombre_final;
+    $ruta = "archivos/CV/" . $nombre_final;
     $subirarchivo = move_uploaded_file($_FILES["CV"]["tmp_name"],"../".$ruta);
+    //SUBIR FOTO DE PERFIL
+    $nombre_base = basename($_FILES["fotoPerfil"]["name"]);
+    $nombre_final = date("m-d-y"). "-". date("H-i-s") . "-".$nombre_base;
+    $rutaPerfil = "archivos/fotoPerfil/" . $nombre_final;
+    $subirFoto = move_uploaded_file($_FILES["fotoPerfil"]["tmp_name"],"../".$rutaPerfil);
 
     $instanciaControlador -> SaveInfoForModel (
         $_POST["nombre"],
@@ -119,7 +143,8 @@ if(isset($_POST['action']) && $_POST['action']=='registrarTrabajador'){
         $_POST["pais"],
         $_POST["genero"],
         $_POST["telefono"],
-        $ruta
+        $ruta,
+        $rutaPerfil
     );
 }
 if(isset($_POST['action']) && $_POST['action']=='registrarEmpleador'){

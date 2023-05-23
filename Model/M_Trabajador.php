@@ -61,7 +61,8 @@ class Trabajador {
         $nombre_postulado = $usuario['nombre_trab'];
         $CV_postulado = $usuario['CV_trab'];
         $id_trab = $usuario['id_trabajador'];
-        $consulta = "INSERT INTO lista_postulados(nombre_postulado, vacante_postulada, fecha_postulado, CV_postulado, estado, id_trabajador, id_vacante) VALUES ('$nombre_postulado','$nomVacante','$fecha','$CV_postulado','Activo','$id_trab','$vacantePostulada') ";
+        $foto_postulado = $usuario['foto_perfil'];
+        $consulta = "INSERT INTO lista_postulados(nombre_postulado, vacante_postulada, fecha_postulado, CV_postulado, estado, id_trabajador, id_vacante, foto_postulado) VALUES ('$nombre_postulado','$nomVacante','$fecha','$CV_postulado','Activo','$id_trab','$vacantePostulada','$foto_postulado') ";
         $resultado = mysqli_query($conexion, $consulta);
         if($resultado){
             echo "<script>alert('Se postuló correctamente');</script>";
