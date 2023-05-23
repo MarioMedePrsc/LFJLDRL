@@ -5,13 +5,29 @@
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=League Spartan' rel='stylesheet'>
     <link rel="stylesheet" href="../css/style01.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="preload" href="../css/styles.css" as="style">
     <title>LFJLDRL</title>
 </head>
 <body>
-    <header>
+    <div style="position: fixed; right: 10px; font-family: 'Inter','League Spartan'; z-index: 3; background-color: white; border-radius: 0px 0px 0px 10px; ">
+        <!--NAVBAR-->
+        <div class="header-b">
+         <div style="display:flex;float:right; margin-top:10px; margin-right: 10px;" >  
+         <a class="M_navlink" href="../Controllers/C_Empleador.php?action=inicio" style="padding: 10px; text-decoration: none;  font-size: 2.5vh; ">Inicio</a>
+         <a class="M_navlink" href="../Controllers/C_Empleador.php?action=PostularVacante" style="padding: 10px; text-decoration: none;  font-size: 2.5vh; ">Postular Vacante</a>   
+        <form action="../Controllers/C_UsuarioController.php" method="POST" style="padding: 10px;">
+            <input type="hidden" name="action" value="CerrarSesion" />
+            <button class="M_navlink" type="submit" style="padding: 10px; font-family: 'Inter','League Spartan'; font-size: 2.5vh; margin-top:-10px; border: 0px transparent;  ">Cerrar Sesion</button>
+        </form>
+        </div>
+        </div>
+        <!--FIN DEL NAVBAR-->
+    </div> 
+    <header>    
         <div class="div-logo">
-            <a href="#" class="logo">
-                <img src="../../imagenes/logo1.png" alt="Logo-empresa" class="logo-empresa">
+            <a href="../Controllers/C_Empleador.php?action=inicio" >
+                <img src="../imagenes/logo.png" alt="" class="logo" width="200px" height="200px">
             </a>
         </div>
         <div class="personas-postuladas">
@@ -45,18 +61,16 @@
                     <input class="data5" id="Jornada" type="text" name="jornadaVac" maxlength="50" required><br><br>
 
                     <label for="">Formato:<span class="span-formato"></span>
-                        <label for="Presencial">Presencial:<input id="Presencial" type="radio" name="presencial-line"></label>
-                        <span class="span-formato"></span><label for="Linea">En linea:<input id="Linea" type="radio" name="presencial-line"></label>
-                        <span class="span-formato"></span><label for="Linea">Hibrido:<input id="Hibrido" type="radio" name="presencial-line"></label>
-                    </label><br><br>
-
+                    <select name="formatoVac" style="font-size: 20px; font-family: 'Inter';">
+                    <option>Presencial</option>
+                    <option>En línea</option>
+                    <option>Híbrido</option>
+                    </select>   <br><br>
+                    <label for="Descripcion">Descripcion:</label><span class="span-desc"></span>
                     <div class="div-desc">
-                        <label for="Descripcion">Descripcion:</label><span class="span-desc"></span>
-                        <textarea name="" id="Descripcion" cols="30" rows="3" name="descripcionVac"></textarea><br><br>
+                        
+                        <textarea id="Descripcion" cols="100" rows="10" name="descripcionVac"></textarea><br><br>
                     </div><br>
-
-                    <label for="Nempresa">Nombre de empresa:</label>
-                    <input class="data7" id="Nempresa" type="text" name="nombreEmp" maxlength="50" required><br><br>
 
                     <label for="Cempresa">Correo de la empresa:</label>
                     <input class="data8" id="Cempresa" type="email" name="correoEmp" maxlength="50" required><br><br>
@@ -65,10 +79,14 @@
                     <input class="data9" id="Tempresa" type="tel" name="telefonoEmp" maxlength="50" required><br><br>
 
                     <label for="Logo">Agregar logo:</label><span class="span-agregar-logo"></span>
-                    <input class="" id="Logo" type="file" name="logoEmp"><label class="agregar-logo-label" for="Logo">Agregar logo</label><br><br>
+                    <input class="" id="Logo" type="file" name="logoEmp" accept=".jpg,.jpeg,.png"><label class="agregar-logo-label" for="Logo">Agregar logo</label><br><br>
 
                     <div style="text-align: center;">
-                        <button class="cancelar">Cancelar</button>
+
+                        
+                            <a href="../Controllers/C_Empleador.php?action=inicio" class="cancelar" style="text-decoration: none;">Cancelar</a>
+                        
+                        
                         <button class="send">Enviar</button>
                     </div>
                     
@@ -83,52 +101,3 @@
     </footer>
 </body>
 </html>
-
-
-
-<!--
-<!DOCTYPE html>
-<html>
-    <head></head>
-    <body>
-        <h1>POSTULAR VACANTE EMPLEADOR</h1>
-        <a href="../Controllers/C_Empleador.php?action=inicio">Volver al inicio</a>
-        <form action="../Controllers/C_UsuarioController.php" method="POST">
-        <input type="hidden" name="action" value="CerrarSesion"/>
-        <button type="submit" >CerrarSesion</button>
-        </form>
-
-        <form action="../Controllers/C_Empleador.php" method="POST" enctype="multipart/form-data">
-            <input type="hidden" name="action" value="PostularVacante"/>
-
-            <label>Nombre de la vacante:</label><input type="text" name="nombreVac"><br/>
-            
-            <label>Ubicacion:</label><input type="text" name="ubicacionVac" ><br/>
-            
-            <label>Idioma:</label><input type="text" name="idiomaVac"><br/>
-            
-            <label>Sueldo:</label><input type="text" name="sueldoVac"><br/>
-            
-            <label>Jornada:</label><input type="text" name="jornadaVac"><br/>
-            
-            <label>Formato:</label><select name="formatoVac">
-                <option>Presencial</option>
-                <option>En línea</option>
-                <option>Híbrido</option>
-            </select><br/>
-            
-            <label>Descripcion:</label><input type="text" name="descripcionVac"><br/>
-            
-            <label>Empresa:</label><input type="text" name="nombreEmp"><br/>
-            
-            <label>Correo de la empresa:</label><input type="text" name="correoEmp"><br/>
-            
-            <label>Telefono de la Empresa:</label><input type="text" name="telefonoEmp"><br/>
-            
-            <label>Agregar Logo:</label><input type="file" name="logoEmp"><br/>
-            
-            <button type="submit">Registrar</button>
-        </form>
-
-    </body>
-</html>-->

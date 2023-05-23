@@ -20,16 +20,16 @@ class TrabajadorController extends Trabajador {
         $this->ubicacionVac = $ubicacionVac;
         $this->vacanteSeleccionada = $vacanteSeleccionada;
 
-        //Vacante Seleccionada
-
+        //Vacante Seleccionadaa
         $resultado = $this->SearchVacantesByName();
         $vacantesOcupadas = $this->SearchVacantesPostuladas();
+        $vacantesEntrevistadas = $this->SearchEntrevistas();
         require '../Views/trabajadores/busqueda.php';
     }
-    public function Postularse($vacantePostulada, $nomVacante){
+    public function Postularse($vacantePostulada, $nomVacante, $foto_vacante){
         $this->id=$_SESSION['id'];
         $resultado = $this->SearchTrabajadorById();
-        $this->InsertarPostulado($resultado,$vacantePostulada, $nomVacante);
+        $this->InsertarPostulado($resultado,$vacantePostulada, $nomVacante, $foto_vacante);
         echo "<script>window.history.back();</script>";
     }
     public function Despostular($vacanteDespostulada){
@@ -62,7 +62,8 @@ if(isset($_POST['postular'])){
     $instanciaControlador = new TrabajadorController();
     $vacantePostulada = $_POST['postular'];
     $nomVacante = $_POST['nomVacante'];
-    $instanciaControlador -> Postularse($vacantePostulada, $nomVacante);
+    $foto_vacante = $_POST['foto_vacante'];
+    $instanciaControlador -> Postularse($vacantePostulada, $nomVacante, $foto_vacante);
 }
 if(isset($_POST['despostular'])){
     $instanciaControlador = new TrabajadorController();

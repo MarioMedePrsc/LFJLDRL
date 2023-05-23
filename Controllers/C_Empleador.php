@@ -65,7 +65,7 @@ class EmpleadorController extends Empleador {
             $hora,
             $formato,
             $lugar,
-            $mensaje,$nombreTrab,$nombreVac
+            $mensaje,$nombreTrab,$nombreVac,$foto_entrevistado,$foto_vacante
             ){
             $this->E_IdVacante = $E_IdVacante;
             $this->E_IdTrabajador = $E_IdTrabajador;
@@ -75,7 +75,9 @@ class EmpleadorController extends Empleador {
             $this->lugar = $lugar;
             $this->mensaje = $mensaje;
             $this->NombreTrab = $nombreTrab;
-            $this-> NombreVac = $nombreVac;
+            $this->NombreVac = $nombreVac;
+            $this->foto_entrevistado = $foto_entrevistado;
+            $this->foto_vacante = $foto_vacante;
             $this->AgendarEntrevista();
             $ruta= "C_Empleador.php?VerVacante=".$E_IdVacante.";&IdPostulado=";
             header('Location: '.$ruta.'');
@@ -134,7 +136,7 @@ if(isset($_POST['E_IdVacante'])){
         $_POST['hora'],
         $_POST['formato'],
         $_POST['lugar'],
-        $_POST['mensaje'],$_POST['nombreTrab'],$_POST['nombreVac']
+        $_POST['mensaje'],$_POST['nombreTrab'],$_POST['nombreVac'],$_POST['foto_entrevistado'],$_POST['foto_vacante']
     );
 }
 if(isset($_POST['CancelarEnt'])){

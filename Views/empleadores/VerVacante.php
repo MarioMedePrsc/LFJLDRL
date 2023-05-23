@@ -5,13 +5,31 @@
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=League Spartan' rel='stylesheet'>
     <link rel="stylesheet" href="../css/style03.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="preload" href="../css/styles.css" as="style">
     <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">-->
     <title>LFJLDRL Interfaz 8</title>
 </head>
 <body>
+
+<div style="position: fixed; right: 10px; font-family: 'Inter','League Spartan'; z-index: 3; background-color: white; border-radius: 0px 0px 0px 10px; ">
+        <!--NAVBAR-->
+        <div class="header-b">
+         <div style="display:flex;float:right; margin-top:10px; margin-right: 10px;" >  
+         <a class="M_navlink" href="../Controllers/C_Empleador.php?action=inicio" style="padding: 10px; text-decoration: none;  font-size: 2.5vh; height: 3vh;">Inicio</a>
+         <a class="M_navlink" href="../Controllers/C_Empleador.php?action=PostularVacante" style="padding: 10px; text-decoration: none;  font-size: 2.5vh; height: 3vh;">Postular Vacante</a>   
+        <form action="../Controllers/C_UsuarioController.php" method="POST" style="padding: 10px;">
+            <input type="hidden" name="action" value="CerrarSesion" />
+            <button class="M_navlink" type="submit" style="padding: 10px; font-family: 'Inter','League Spartan'; font-size: 2.5vh; margin-top:-10px; border: 0px transparent; height: 6vh; ">Cerrar Sesion</button>
+        </form>
+        </div>
+        </div>
+        <!--FIN DEL NAVBAR-->
+    </div> <br/><br/>
+
     <header>
         <div class="div-logo">
-            <a href="#" class="logo">
+            <a href="../Controllers/C_Empleador.php?action=inicio" class="logo">
                 <img src="../imagenes/logo.png" alt="Logo-empresa" class="logo-empresa">
             </a>
         </div>
@@ -148,11 +166,13 @@
                     <input type="hidden" name="E_IdTrabajador" value="<?php echo $infoPostulado["id_trabajador"]; ?>"/>
                     <input type="hidden" name="nombreVac" value="<?php echo $infoVacante["nombre_vac"]; ?>">
                     <input type="hidden" name="nombreTrab" value="<?php echo $infoPostulado["nombre_trab"]; ?>"/>
+                    <input type="hidden" name="foto_entrevistado" value="<?php echo $infoPostulado["foto_perfil"]; ?>"/>
+                    <input type="hidden" name="foto_vacante" value="<?php echo $infoVacante["logo_vac"]; ?>"/>
                         
 
                         <div class="contenido-principal1-formulario-contenedor-terciario textos">
                             <div class="contenido-formulario-contenedor-terciario1">
-                                <div class="centrar-contenid-formulario1"><label for="dia">Dia:</label><br></div>
+                                <div class="centrar-contenid-formulario1"><label for="dia">Fecha:</label><br></div>
                                 <input class="dato1" id="dia" type= "date" name="dia"/>
                             </div>
     
@@ -164,8 +184,8 @@
                             <div class="contenido-formulario-contenedor-terciario4">
                                 <div class="centrar-contenid-formulario4"><label for="formato">Formato:</label><br></div>
                                 <div class="opciones-formato-formulario-terciario">
-                                    <label for="Presencial">Presencial:<input id="Presencial" type="radio" name="formato"></label>
-                                    <label for="Linea">En linea:<input id="Linea" type="radio" name="formato"></label>
+                                    <label for="Presencial">Presencial:</label><input id="Presencial" type="radio" name="formato" value="Presencial">
+                                    <label for="Linea">En linea:</label><input id="Linea" type="radio" name="formato" value="Linea">
                                 </div>
                             </div>
                         </div><br>
@@ -210,7 +230,7 @@
            
             <div class="perfil-entrevistado">
                 <div class="persona-n3">
-                    <img src="imagenes/Persona1.png" alt="Foto de la persona" class="fotografia-de-la-persona">
+                    <img src="../<?php echo $entrevista["foto_entrevistado"]; ?>" alt="Foto de la persona" class="fotografia-de-la-persona">
                     <h4 class="textos2"><?php echo $entrevista["nombre_trab"]; ?></h4>
                 </div>
             </div>
@@ -256,104 +276,3 @@
     <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>-->
 </body>
 </html>
-
-
-
-
-<!--<!DOCTYPE html>
-<html>
-    <head></head>
-    <body>
-        <h1>VER VACANTE EMPLEADOR</h1>
-        <a href="../Controllers/C_Empleador.php?action=inicio">Volver al inicio</a>
-        <form action="../Controllers/C_UsuarioController.php" method="POST">
-        <input type="hidden" name="action" value="CerrarSesion"/>
-        <button type="submit" >CerrarSesion</button>
-        </form>
-        <?php
-        //INFORMACION DE LA VACANTE
-        ?>
-        <img src="../<?php echo $infoVacante["logo_vac"]; ?>" width="50px" height="50px"/>
-        <h1> <?php echo $infoVacante["nombre_vac"];?></h1>
-        <p><?php echo $infoVacante["nombre_emp"]." ". $infoVacante["jornada_vac"].
-        " ". $infoVacante["ubicacion_vac"] ." ". $infoVacante["formato_vac"] ?></p>
-        Personas postuladas
-        <div>
-        <h1>Personas postuladas</h1>    
-        <div>
-            <?php 
-            while($postulado = mysqli_fetch_assoc($lista_postulados)){
-                ?>
-                <a href="../Controllers/C_Empleador.php?VerVacante=<?php echo $postulado["id_vacante"]; ?>&IdPostulado=<?php echo $postulado['id_trabajador']; ?>">
-                <div>
-                <h3><?php echo $postulado["nombre_postulado"]?></h3>
-                </div>
-                </a>
-                <?php
-            }
-            ?>
-            </div>
-            <div>
-                <?php
-                if($infoPostulado==null){
-                    echo "Selecciona a un postulado para ver su información";
-
-                }else{
-                    ?>
-                    <h1><?php echo $infoPostulado["nombre_trab"]; ?></h1>
-                    <p><?php echo $infoPostulado["apellido_trab"]; ?></p>
-                    <p><?php echo $infoPostulado["correo_trab"]; ?></p>
-                    <p><?php echo $infoPostulado["tel_trab"]; ?></p>
-                    <p><?php echo $infoPostulado["fecha_nacimiento"]; ?></p>
-                    <p><?php echo $infoPostulado["pais_trab"]; ?></p>
-                    <p><?php echo $infoPostulado["genero_trab"]; ?></p>
-                    Descargar <a href="../<?php echo $infoPostulado["CV_trab"]; ?>" download="CV_<?php echo $infoPostulado["nombre_trab"]; ?>">Curriculum</a>
-                    
-                    
-                    <form action="../Controllers/C_Empleador.php" method="POST">
-                    <h2>Registrar entrevista</h2>
-                    <input type="hidden" name="E_IdVacante" value="<?php echo $infoVacante["id_vacante"]; ?>">
-                    <input type="hidden" name="E_IdTrabajador" value="<?php echo $infoPostulado["id_trabajador"]; ?>"/>
-                    <input type="hidden" name="nombreVac" value="<?php echo $infoVacante["nombre_vac"]; ?>">
-                    <input type="hidden" name="nombreTrab" value="<?php echo $infoPostulado["nombre_trab"]; ?>"/>
-                    <label>Dia: </label><input type= "date" name="dia"/>
-                    <label>Hora: </label><input type= "time" name="hora"/><br/>
-                    <label>Formato:</label><select name="formato">
-                    <option>Presencial</option>
-                    <option>En línea</option>
-                    </select>
-                    <label>Lugar/Medio: </label><input type="text" name="lugar"><br/>
-                    <label>Mensaje: <input type="textarea" name="mensaje"></label><br/>
-                    <button type="submit">Agendar</button>
-                    </form>
-                    <?php
-                } ?>
-            </div>
-        </div>
-        Entrevistas pendientes
-        <div>
-            <h1>Entrevistas pendientes</h1>
-            <div>
-                <?php
-                while($entrevista = mysqli_fetch_assoc($lista_entrevistas)){
-                    ?>
-                    <p><?php echo $entrevista["nombre_trab"]; ?></p>
-                    <p><?php echo $entrevista["fecha_ent"]; ?></p>
-                    <p><?php echo $entrevista["hora_ent"]; ?></p>
-                    <p><?php echo $entrevista["lugar_ent"]; ?></p>
-                    <p><?php echo $entrevista["formato_ent"]; ?></p>
-                    <p><?php echo $entrevista["estado"]; ?></p>
-                    <form action="../Controllers/C_Empleador.php" method="POST">
-                        <input type="hidden" value="<?php echo $entrevista["id_entrevista"]; ?>" name="CancelarEnt"/>
-                        <input type="hidden" value="<?php echo $infoVacante["id_vacante"]; ?>" name="idVaca"/>
-                        <button type="submit">Cancelar Entrevista</button>
-                    </form>
-                    <?php
-                }
-                ?>
-            </div>
-        </div>
-        <?php
-        ?>
-    </body>
-</html>-->
