@@ -1,0 +1,203 @@
+body{
+    margin: 0;
+}
+/*=============FUENTES==================*/
+.titulos-subtitulos-botones{
+    font-family: 'League Spartan';
+    font-size: 35px;
+    margin: 10px 0 1px 0;
+}
+.textos{
+    font-family: 'Inter';
+    font-size: 20px;
+    margin: 10px 0 10px 0;
+}
+.textos2{
+    font-family: 'Inter';
+    font-size: 17px;
+    margin: 19px 0 10px 0;
+}
+.titulos-subtitulos-botones2{
+    font-family: 'League Spartan';
+    font-size: 25px;
+}
+.titulos-subtitulos-botones3{
+    font-family: 'League Spartan';
+    font-size: 28px;
+}
+.titulos-subtitulos-botones4{
+    font-family: 'League Spartan';
+    font-size: 23px;
+}
+.subtitulos-menos-importantes{
+    font-family: 'League Spartan';
+    font-size: 24px;
+}
+
+/*=============LOGO==================*/
+.logo-empresa{
+    height: 100px;
+    width: 150px;
+}
+.personas-postuladas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+    height: 70px;
+    background-color: #3a5f6f;
+    color: #fff;
+    border-radius: 50px;
+    box-shadow: 5px 10px #e3e4e4;
+}
+.span-header{
+    height: 100px;
+    width: 150px;
+}
+
+/*=============HEADER==================*/
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*background-color: aqua;*/
+}
+
+/*===============FORMULARIO================*/
+.box1{
+    width: 45%;
+    border: 3px solid #c4c8c5;
+    border-radius: 20px;
+    box-shadow: -10px -5px #cacccc;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px 20px 10px 40px;
+}
+
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+}
+
+input[type="password"] {
+    font-family: inherit;
+}
+
+button[type="submit"] {
+    margin-top: 20px;
+}
+.footer {
+    background-color: #459a96;
+    color: white;
+    padding: 15px;
+    text-align: right;
+    width: 1450px;
+}
+.Controles{
+    width: 250px;
+    padding: 4px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #c4c8c5;
+}
+.boton{
+    width: 220px;
+    background: #3a5f6f;
+    border-radius: 15px;
+    padding: 7px;
+    color: white;   
+    margin-bottom: 10px;
+    border: 2px solid #243757;
+    font-size: 16px;
+}
+.boton:hover{
+    background: #186c65;
+}
+.s{
+    width: 25%;
+    background: #243757;
+    border-radius: 15px;
+    padding: 7px;
+    color: white;   
+    margin-bottom: 10px;
+    border: 2px solid white;
+    font-size: 16px;
+}
+h1{
+    color: #243757;
+    font-size: 38px;
+}
+.nombre-apeliido{
+    display: flex;
+}
+.input-nombre{
+    margin-right: 10px;
+}
+.input-apellidos{
+    margin-left: 10px;
+}
+.Controles1{
+    width: 533px;
+    padding: 4px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #c4c8c5;
+}
+.pais-genero{
+    display: flex;
+}
+.input-pais{
+    margin-right: 20px;
+}
+.input-genero{
+    margin-left: 20px;
+}
+
+
+input#Logo{
+    display: none;
+}
+.agregar-logo-label{
+    background-color: #459a96;
+    color: #fff;
+    width: 220px;
+    height: 20px;
+    border-radius: 10px;
+    font-size: 18px;
+    padding: 8px;
+    margin: 10px;
+    border: 3px solid #459a96;
+}
+.agregar-logo-label:hover{
+    background-color: #3cbab4;
+}
+
+.abajo-iniciar-sesion{
+    color: #3cbab4;
+}
+
+/*========FOOTER========*/
+footer{
+    background:#34baab ;
+    padding: 10px  0 30px 0;
+    margin: auto;
+    overflow: hidden;
+}
+.titulo-final{
+    text-align: center;
+    font-size: 24px;
+    margin: 20px 0 0 0;
+    color: #fff;
+}

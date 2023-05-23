@@ -1,0 +1,213 @@
+:root{
+    --blanco: #ffffff;
+    --negro: #212121;
+    --primario: #00b341;
+    --secundario: #B30800;
+    --verde_negro: #484450;
+    --verde_opaco: #466067;
+    --verde: #459a96;
+    --verde_menta: #34baab;
+    --gris: #9A9A9D;
+    --gris_claro1: #dcdcdc;
+    --gris_claro2: #f4f4f4;
+    --azul_oscuro: #243757;
+    --verde_oscuro: #3a5f6f;
+}
+
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/* --------------- GENERAL --------------- */
+body{
+    font-family: 'Inter', sans-serif;
+}
+
+.contenedor{
+    max-width: 100rem;
+    border-color: var(--gris);
+
+    /*Primer valor, top & bottom; Segundo valor, right & left*/
+    margin: 3rem auto 0 auto;
+}
+
+.sombra{
+    /*-webkit-box-shadow: 0px 5px 15px 0px rgba(148,148,148,0.59);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(148,148,148,0.59); */
+    box-shadow: 0px 5px 15px 0px rgba(148,148,148,0.59);
+
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.titulo{
+    font-family: 'League Spartan', sans-serif;
+    font-size: 4rem;
+}
+
+p, a{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+a{
+    color: #4E9693;
+}
+
+/* --------------- UTILIDADES --------------- */
+.grid3{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid2{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+}
+
+.ancho2{
+    grid-column: 1/3;
+}
+
+.centro{
+    display: flex;
+    justify-content: center;
+}
+
+.blue-button {
+    background-color: #4E8D96;
+    color: white;
+    outline-color: #4E8D96;
+}
+
+.white-button {
+    background-color: var(--blanco);
+    color: var(--negro);
+    outline-color: #4E8D96;
+}
+
+.bttn-redondo-azul{
+    border-radius: 2rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    padding: 1rem;
+    background-color: #3A5F6F;
+    color: var(--blanco);
+    border-style: none;
+    height: fit-content;
+}
+
+.texto-menor{
+    font-size: 1.6rem;
+}
+
+/* --------------- ELEMENTOS --------------- */
+h2{
+    margin: 0;
+    font-size: 3rem;
+}
+
+h3{
+    font-size: 2rem;
+    margin: 0 0 0.5rem;
+}
+
+.logo{
+    width: 20rem;
+    height: 20rem;
+    position: fixed;
+}
+
+.sombra{
+    box-shadow: -1rem -1rem 0rem 0rem var(--gris_claro1);
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: var(--azul_oscuro);
+    padding: 1rem 20rem;
+    color: var(--blanco);
+    font-size: 2rem;
+    border-radius: 3rem;
+    border: 3px solid var(--negro);
+    margin-top: 4rem;
+    font-weight: bold;
+}
+
+.busqueda{
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem;
+    margin-bottom: 4rem;
+}
+
+.globo-menta{
+    background-color: var(--verde_menta);
+    padding: 1rem 5rem;
+    border-radius: 2rem;
+    border: 1.5px solid var(--negro);
+    color: var(--blanco);
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+input{
+    font-family: 'Inter', sans-serif;;
+    border-radius: 2rem;
+    border: 1.5px solid var(--gris);
+    width: 25rem;
+}
+
+button:hover{
+    background-color: var(--verde);
+}
+
+.vacante{
+    box-shadow: -1rem -1rem 0rem 0rem var(--gris_claro1);
+    padding: 1rem;
+    border-radius: 3rem;
+    border: 3px solid var(--negro);
+    margin: 2rem;
+
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+
+.vacante:hover{
+    background-color: var(--gris_claro2);
+}
+
+.icono{
+    height: 3rem;
+    width: 3rem;
+    margin: auto;
+}
+
+.detalles{
+    width: 90%;
+    border: 1px solid var(--negro);
+    border-radius: 1rem;
+    background-color: var(--azul_oscuro);
+    color: var(--blanco);
+}
+
+/* --------------- FOOTER --------------- */
+.footer{
+    background-color: #4E9693;
+    text-align: center;
+    margin-top: 2rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 8%;
+}
+
+.ultimo{
+    margin-bottom: 10rem;
+}
