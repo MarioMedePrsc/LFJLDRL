@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=League Spartan' rel='stylesheet'>
-    <link rel="stylesheet" href="../../css/style05.css">
+    <link rel="stylesheet" href="../css/style05.css">
     <title>Interfaz 4</title>
 </head>
 <body>
     <header>
         <div class="div-logo">
-            <a href="#" class="logo">
-                <img src="imagenes/Logo.jpeg" alt="Logo-empresa" class="logo-empresa">
+            <a href="../Controllers/C_Empleador.php?action=inicio" class="logo">
+                <img src="../imagenes/logo.png" alt="Logo-empresa" class="logo-empresa">
             </a>
         </div>
         <div class="personas-postuladas">

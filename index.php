@@ -11,7 +11,7 @@
 <body id="fondo">
     <header>
         <nav class="navbar">
-            <a href="a" class="enlace">
+            <a href="#" class="enlace">
                 <img src="imagenes/logo1.png" alt="" class="logo">
             </a>
           <ul>

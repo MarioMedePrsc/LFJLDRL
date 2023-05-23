@@ -17,6 +17,8 @@ if($vacantesOcupadas != null){
     <title>Búsqueda de empleo</title>
     <link rel="stylesheet" href="../css.normalize.css">
     <link rel="preload" href="../css/normalize.css" as="style">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="preload" href="../css/styles.css" as="style">
 
     <!--Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,11 +31,22 @@ if($vacantesOcupadas != null){
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
-<body> 
-<form action="../Controllers/C_UsuarioController.php" method="POST" style="float:right; margin-top:10px; margin-right: 10px;">
+<body>
+
+<div style="position: fixed; right: 10px; font-family: 'Inter','League Spartan'; z-index: 3; background-color: white; border-radius: 0px 0px 0px 10px; ">
+        <!--NAVBAR-->
+        <div class="header-b">
+         <div style="display:flex;float:right; margin-top:10px; margin-right: 10px;" >  
+         <a class="M_navlink" href="../Controllers/C_Trabajador.php?action=inicio" style="padding: 10px; text-decoration: none;  font-size: 2.5vh; ">Inicio</a>
+         <a class="M_navlink" href="../Controllers/C_Trabajador.php?buscar=&donde=&VacanteSeleccionada=" style="padding: 10px; text-decoration: none;  font-size: 2.5vh; ">Buscar Vacantes</a>   
+        <form action="../Controllers/C_UsuarioController.php" method="POST" style="padding: 10px;">
             <input type="hidden" name="action" value="CerrarSesion" />
-            <button type="submit">CerrarSesion</button>
+            <button class="M_navlink" type="submit" style="padding: 10px; font-family: 'Inter','League Spartan'; font-size: 2.5vh; margin-top:-10px; border: 0px transparent;  ">Cerrar Sesion</button>
         </form>
+        </div>
+        </div>
+        <!--FIN DEL NAVBAR-->
+    </div> <br/><br/>
     <div class="grid-estructura">
         <!--ZONA SUPERIOR-->
         <section>
@@ -48,24 +61,28 @@ if($vacantesOcupadas != null){
                 <button class="bttn-redondo-azul">BUSCAR CANDIDATOS</button>
                 <button class="bttn-redondo-azul">EMPRESA / PUBLICAR EMPLEOS</button>
             </div>-->
+            <form method="$_GET" action="../Controllers/C_Trabajador.php">
             <div class="grid-buscar">
                 <!--QUÉ-->
+                <input type=hidden value="" name="VacanteSeleccionada"/>
                 <div class="que">
                     <h2>Qué</h2>
                     <p class="texto-gris">Título, palabras clave o empresa</p>
-                    <input type="text" id="que" class="barra-busqueda">
+                    <input type="text" id="que" class="barra-busqueda" name="buscar">
                 </div>
                 <!--DÓNDE-->
                 <div class="donde">
                     <h2>Dónde</h2>
                     <p class="texto-gris">Ciudad o estado</p>
-                    <input type="text" id="que" class="barra-busqueda">
+                    <input type="text" id="que" class="barra-busqueda" name="donde">
                 </div>
                 <!--BUSCAR-->
                 <div class="alinear-bttn">
-                    <button class="bttn-buscar">BUSCAR EMPLEOS</button>
+                    <button class="bttn-buscar" type="submit">BUSCAR EMPLEOS</button>
                 </div>
+                
             </div>
+            </form> 
         </section>
 
         <!--LADO IZQUIERDO-->
@@ -88,8 +105,11 @@ if($vacantesOcupadas != null){
         <!--ÁREA DE EMPLEOS-->
         <section class="zn-empleos ultimo">
         <scroll-container>
-        <?php 
-        $contador = 0;
+        <?php
+        if($_GET["buscar"]==""){
+            echo "No se encontró ninguna vacante que coincida con los parametros de la busqueda";
+        }else{
+            $contador = 0;
         while($row = mysqli_fetch_assoc($resultado)){
             $ocupado = 0;
             for($i=0;$i<$cnt_rows;$i++){
@@ -110,6 +130,7 @@ if($vacantesOcupadas != null){
                     $VS_emp = $row["nombre_emp"];
                     $VS_telEmp = $row["tel_emp"];
                     $VS_idEmp = $row["id_emple"];
+                    $VS_id = $row["id_vacante"];
                 }
                 ?>
                 <a href="../Controllers/C_Trabajador.php?buscar=<?php echo $nombreVac; ?>&donde=<?php echo $ubicacionVac; ?>&VacanteSeleccionada=<?php echo $row["id_vacante"];?>" style="text-decoration: none;">
@@ -133,15 +154,22 @@ if($vacantesOcupadas != null){
             }
             
         }
+        
+        }
         ?>
+        
             </scroll-container>
 
 
             <scroll-container>
 
             <?php
-        if($contador==0){
+        if($_GET["buscar"]==""){
+
+        }else if($contador==0){
             echo "No se encontró ninguna vacante que coincida";
+        }else if($vacanteSeleccionada==""){
+            echo "Selecciona una vacante para ver su información";
         }else {
             ?>
 
@@ -160,8 +188,9 @@ if($vacantesOcupadas != null){
                         </ul>
                     </p>
                     <form action="../Controllers/C_Trabajador.php" method="POST">
-                    <input type="hidden" name="postular" value="<?php echo $vacanteSeleccionada; ?>">
+                    <input type="hidden" name="postular" value="<?php echo $VS_id; ?>">
                     <input type="hidden" name="nomVacante" value="<?php echo $VS_nombre; ?>">
+                    <input type="hidden" name="foto_vacante" value="<?php echo $VS_logo; ?>">
                     <button class="postularse" type="submit">POSTULARME</button>
                     </form>
                 </div>

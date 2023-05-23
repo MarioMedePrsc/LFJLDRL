@@ -7,6 +7,8 @@
     <title>Vacantes</title>
     <link rel="stylesheet" href="../css.normalize.css">
     <link rel="preload" href="../css/normalize.css" as="style">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="preload" href="../css/styles.css" as="style">
 
     <!--Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,10 +21,22 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <form action="../Controllers/C_UsuarioController.php" method="POST" style="float:right; margin-top:10px; margin-right: 10px;">
+
+<header  style="position: fixed; right: 10px; font-family: 'Inter','League Spartan'; z-index: 3; background-color: white; border-radius: 0px 0px 0px 10px; ">
+        
+        <!--NAVBAR-->
+        <div class="header-b">
+         <div style="display:flex;float:right; margin-top:10px; margin-right: 10px;" > 
+         <a class="M_navlink" href="../Controllers/C_Empleador.php?action=inicio" style="padding: 10px; text-decoration: none;  font-size: 2.5vh;">Inicio</a>
+         <a class="M_navlink" href="../Controllers/C_Empleador.php?action=PostularVacante" style="padding: 10px; text-decoration: none;  font-size: 2.5vh;">Postular Vacante</a>   
+        <form action="../Controllers/C_UsuarioController.php" method="POST" style="padding: 10px;">
             <input type="hidden" name="action" value="CerrarSesion" />
-            <button type="submit">CerrarSesion</button>
-        </form>     
+            <button class="M_navlink" type="submit" style="padding: 10px; font-family: 'Inter','League Spartan'; font-size: 2.5vh; margin-top:-10px; border: 0px transparent; ">Cerrar Sesion</button>
+        </form>
+        </div>
+        </div>
+        <!--FIN DEL NAVBAR-->
+    </header> <br/><br/>  
         <a href="../Controllers/C_Empleador.php?action=inicio">  
     <img class="logo" src="../imagenes/logo.png"></a> 
     <section class="centro">

@@ -1,0 +1,10 @@
+.M_navlink{
+    text-decoration: none;
+    color: #3A5F6F;
+    background-color: white;
+    /*height:40px;*/
+    height: 6vh;
+}
+.M_navlink:hover{
+    background-color: #dde7ea;
+}

@@ -5,13 +5,29 @@
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=League Spartan' rel='stylesheet'>
     <link rel="stylesheet" href="../css/style01.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="preload" href="../css/styles.css" as="style">
     <title>LFJLDRL</title>
 </head>
 <body>
-    <header>
+    <div style="position: fixed; right: 10px; font-family: 'Inter','League Spartan'; z-index: 3; background-color: white; border-radius: 0px 0px 0px 10px; ">
+        <!--NAVBAR-->
+        <div class="header-b">
+         <div style="display:flex;float:right; margin-top:10px; margin-right: 10px;" >  
+         <a class="M_navlink" href="../Controllers/C_Empleador.php?action=inicio" style="padding: 10px; text-decoration: none;  font-size: 2.5vh; ">Inicio</a>
+         <a class="M_navlink" href="../Controllers/C_Empleador.php?action=PostularVacante" style="padding: 10px; text-decoration: none;  font-size: 2.5vh; ">Postular Vacante</a>   
+        <form action="../Controllers/C_UsuarioController.php" method="POST" style="padding: 10px;">
+            <input type="hidden" name="action" value="CerrarSesion" />
+            <button class="M_navlink" type="submit" style="padding: 10px; font-family: 'Inter','League Spartan'; font-size: 2.5vh; margin-top:-10px; border: 0px transparent;  ">Cerrar Sesion</button>
+        </form>
+        </div>
+        </div>
+        <!--FIN DEL NAVBAR-->
+    </div> 
+    <header>    
         <div class="div-logo">
-            <a href="#" class="logo">
-                <img src="../../imagenes/logo1.png" alt="Logo-empresa" class="logo-empresa">
+            <a href="../Controllers/C_Empleador.php?action=inicio" >
+                <img src="../imagenes/logo.png" alt="" class="logo" width="200px" height="200px">
             </a>
         </div>
         <div class="personas-postuladas">
@@ -65,10 +81,14 @@
                     <input class="data9" id="Tempresa" type="tel" name="telefonoEmp" maxlength="50" required><br><br>
 
                     <label for="Logo">Agregar logo:</label><span class="span-agregar-logo"></span>
-                    <input class="" id="Logo" type="file" name="logoEmp"><label class="agregar-logo-label" for="Logo">Agregar logo</label><br><br>
+                    <input class="" id="Logo" type="file" name="logoEmp" accept=".jpg,.jpeg,.png"><label class="agregar-logo-label" for="Logo">Agregar logo</label><br><br>
 
                     <div style="text-align: center;">
-                        <button class="cancelar">Cancelar</button>
+
+                        
+                            <a href="../Controllers/C_Empleador.php?action=inicio" class="cancelar" style="text-decoration: none;">Cancelar</a>
+                        
+                        
                         <button class="send">Enviar</button>
                     </div>
                     

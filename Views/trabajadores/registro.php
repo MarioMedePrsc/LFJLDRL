@@ -72,7 +72,7 @@
             </div>
             </div>
             <label for="FotoPerfil"style="text-align: left;">Foto de perfil:</label>
-            <input type="file" name="fotoPerfil" accept=".jpg,.jpeg" id="FotoPerfil" required>
+            <input type="file" name="fotoPerfil" accept=".jpg,.jpeg,.png" id="FotoPerfil" required>
 
             <label for="Curriculum"style="text-align: left;">Currículum:</label>
             <input type="file" name="CV" accept=".pdf" id="curriculum" required><br><br>

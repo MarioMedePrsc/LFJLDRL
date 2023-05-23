@@ -54,7 +54,7 @@ class Trabajador {
         $ic->CloseConnection();
         return $objetoConsulta;
     }
-    protected function InsertarPostulado($usuario,$vacantePostulada, $nomVacante){
+    protected function InsertarPostulado($usuario,$vacantePostulada, $nomVacante, $foto_vacante){
         $ic = new Connection;
         $conexion = $ic->openConnection();
         $fecha = date("m-d-y");
@@ -62,7 +62,7 @@ class Trabajador {
         $CV_postulado = $usuario['CV_trab'];
         $id_trab = $usuario['id_trabajador'];
         $foto_postulado = $usuario['foto_perfil'];
-        $consulta = "INSERT INTO lista_postulados(nombre_postulado, vacante_postulada, fecha_postulado, CV_postulado, estado, id_trabajador, id_vacante, foto_postulado) VALUES ('$nombre_postulado','$nomVacante','$fecha','$CV_postulado','Activo','$id_trab','$vacantePostulada','$foto_postulado') ";
+        $consulta = "INSERT INTO lista_postulados(nombre_postulado, vacante_postulada, fecha_postulado, CV_postulado, estado, id_trabajador, id_vacante, foto_postulado, foto_vacante) VALUES ('$nombre_postulado','$nomVacante','$fecha','$CV_postulado','Activo','$id_trab','$vacantePostulada','$foto_postulado','$foto_vacante') ";
         $resultado = mysqli_query($conexion, $consulta);
         if($resultado){
             echo "<script>alert('Se postuló correctamente');</script>";

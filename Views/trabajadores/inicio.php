@@ -5,28 +5,35 @@
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=League Spartan' rel='stylesheet'>
     <link rel="stylesheet" href="../css/style02.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="preload" href="../css/styles.css" as="style">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <title>LFJLDRL Interfaz 5</title>
 </head>
 <body>
-    <header>
-        
+<div style="position: fixed; right: 10px; font-family: 'Inter','League Spartan'; z-index: 3; background-color: white; border-radius: 0px 0px 0px 10px; ">
+        <!--NAVBAR-->
         <div class="header-b">
-            
-        <form action="../Controllers/C_UsuarioController.php" method="POST" style="float:right; margin-top:10px; margin-right: 10px;">
+         <div style="display:flex;float:right; margin-top:10px; margin-right: 10px;" >  
+         <a class="M_navlink" href="../Controllers/C_Trabajador.php?action=inicio" style="padding: 10px; text-decoration: none;  font-size: 2.5vh; ">Inicio</a>
+         <a class="M_navlink" href="../Controllers/C_Trabajador.php?buscar=&donde=&VacanteSeleccionada=" style="padding: 10px; text-decoration: none;  font-size: 2.5vh; ">Buscar Vacantes</a>   
+        <form action="../Controllers/C_UsuarioController.php" method="POST" style="padding: 10px;">
             <input type="hidden" name="action" value="CerrarSesion" />
-            <button type="submit">CerrarSesion</button>
+            <button class="M_navlink" type="submit" style="padding: 10px; font-family: 'Inter','League Spartan'; font-size: 2.5vh; margin-top:-10px; border: 0px transparent;  ">Cerrar Sesion</button>
         </form>
+        </div>
+        </div>
+        <!--FIN DEL NAVBAR-->
+    </div> 
+    <header>
+        <!--NAVBAR-->
+        <div class="header-b">
             <a href="../Controllers/C_Trabajador.php?action=inicio" class="logo">
                 <img src="../imagenes/logo.png" alt="Logo-empresa">
             </a>
-            <div class="div-botones-header">
-                <button class="boton-header">BUSCAR EMPLEO</button>
-                <button class="boton-header">BUSCAR CANDIDATOS</button>
-                <button class="boton-header">EMPRESA/PUBLICAR EMPLEOS</button>
-            </div><br>
             
         </div>
+        <!--FIN DEL NAVBAR-->
         
         <nav>
             <form method="$_GET" action="../Controllers/C_Trabajador.php">
@@ -57,7 +64,7 @@
                     </button>
                 </div>
                 <input type=hidden value="" name="VacanteSeleccionada"/>
-                <button class="boton-empleo">BUSCAR EMPLEOS</button>
+                <button class="boton-empleo" type="submit">BUSCAR EMPLEOS</button>
             </div></form>
         </nav>
     </header>
@@ -72,18 +79,19 @@
                 <h4 class="bold titulos-subtitulos-botones2">Entrevistas Pendientes</h4>
             </div>
             <div class="contenedor-secundario">
+            <div class="contenedor-terciario">
                 <?php 
         while($Vacante = mysqli_fetch_assoc($resultado)){
             ?>
-                <div class="contenedor-terciario">
-                    <div class="texto">
+                
+                    <div class="texto" style="margin-bottom: auto;">
                         <div class="dentro-texto">
-                            <img src="imagenes/Imagen1.png" alt="">
+                            <img src="../<?php echo $Vacante['foto_vacante'] ?>" alt="" style="border-radius: 5px;">
                             <h4 class="titulos-subtitulos-botones bold2"><?php echo $Vacante['vacante_postulada'] ?></h4>
                             <span></span>
                         </div><br>
-                        <p class="textos-font">Fecha: <?php echo "Fecha: ".$Vacante['fecha_postulado'] ?></p>
-                        <p class="textos-font">Estado: <?php echo "Estado: ".$Vacante['estado'] ?></p>
+                        <p class="textos-font"> Fecha: <?php echo $Vacante['fecha_postulado'] ?> Estado: <?php echo $Vacante['estado'] ?></p>
+                        <p class="textos-font"></p>
 
                         <form action="../Controllers/C_Trabajador.php" method="POST">
                             <input type="hidden" name="despostular" value="<?php echo $Vacante['id_postulado']; ?>">
@@ -93,14 +101,16 @@
                 }
                 ?>
                 </div>
+
+                <div class="contenedor-terciario">
                 <?php
                 while($entrevista = mysqli_fetch_assoc($lista_entrevistas)){
                     ?>
-                <div class="contenedor-terciario">
-                    <div class="texto">
-                        <div class="dentro-texto">
-                            <img src="imagenes/Imagen1.png" alt="">
-                            <h4 class="titulos-subtitulos-botones bold2">Desarrollador Web</h4>
+                
+                    <div class="texto" style="margin-bottom: auto;" >
+                        <div class="dentro-texto" >
+                            <img src="../<?php echo $entrevista["foto_vacante"]; ?>" alt="" style="border-radius: 5px;">
+                            <h4  class="titulos-subtitulos-botones bold2" ><?php echo $entrevista["nombre_vac"]; ?></h4>
                             <span></span>
                         </div><br>
                         <div class="dentro-texto2">
@@ -119,10 +129,11 @@
                             <button class="boton-dentro-div-prov">Cancelar Entrevista</button>
                         </form>
                     </div>
-                </div>
+                
                 <?php
                 }
                 ?>
+                </div>
             </div>
         </div>
 
