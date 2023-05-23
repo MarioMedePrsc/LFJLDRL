@@ -79,7 +79,7 @@ class Empleador {
     protected function AgendarEntrevista(){
         $ic = new Connection;
         $conexion = $ic->openConnection();
-        $consulta = "INSERT INTO entrevistas(lugar_ent, fecha_ent, hora_ent, formato_ent, mensaje_ent, id_vacante, id_trabajador,nombre_trab,nombre_vac, estado,foto_entrevistado,foto_vacante) VALUES ('$this->lugar','$this->lugar','$this->hora','$this->formato','$this->mensaje','$this->E_IdVacante','$this->E_IdTrabajador','$this->NombreTrab','$this->NombreVac','Activo','$this->foto_entrevistado','$this->foto_vacante')";
+        $consulta = "INSERT INTO entrevistas(lugar_ent, fecha_ent, hora_ent, formato_ent, mensaje_ent, id_vacante, id_trabajador,nombre_trab,nombre_vac, estado,foto_entrevistado,foto_vacante) VALUES ('$this->lugar','$this->dia','$this->hora','$this->formato','$this->mensaje','$this->E_IdVacante','$this->E_IdTrabajador','$this->NombreTrab','$this->NombreVac','Activo','$this->foto_entrevistado','$this->foto_vacante')";
         $resultado = mysqli_query($conexion, $consulta);
         if($resultado){
             $consulta = "UPDATE lista_postulados SET estado='Aceptado' WHERE id_trabajador='$this->E_IdTrabajador' and id_vacante='$this->E_IdVacante' ";

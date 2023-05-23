@@ -20,10 +20,10 @@ class TrabajadorController extends Trabajador {
         $this->ubicacionVac = $ubicacionVac;
         $this->vacanteSeleccionada = $vacanteSeleccionada;
 
-        //Vacante Seleccionada
-
+        //Vacante Seleccionadaa
         $resultado = $this->SearchVacantesByName();
         $vacantesOcupadas = $this->SearchVacantesPostuladas();
+        $vacantesEntrevistadas = $this->SearchEntrevistas();
         require '../Views/trabajadores/busqueda.php';
     }
     public function Postularse($vacantePostulada, $nomVacante, $foto_vacante){
