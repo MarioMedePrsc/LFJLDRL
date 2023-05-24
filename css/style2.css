@@ -3,7 +3,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     margin: 0;
 }
 
@@ -11,12 +10,12 @@ body {
     background-color: white;
     border-radius: 8%;
     width: 600px;
-    height: 900px;
-    padding: 70px;
+    
+    padding: 20px;
     display: flex;
-    flex-direction: column;
+    
     align-items: center;
-    margin-top: 300px;
+    
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     box-shadow: 0 5px 10px;
     border: 4px solid #c4c8c5;

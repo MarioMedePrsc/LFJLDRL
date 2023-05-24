@@ -13,7 +13,8 @@
 <body>
 <a href="../Controllers/C_Trabajador.php?action=login" >
     <img src="../imagenes/logo.png" alt="" class="logo"></a>
-    <div class="container" style="margin-top: 30%;">
+    
+    <div class="container" style="margin-top: 40%;">
 
         <h1 style="margin-top: -20px;">Crea tu cuenta como Trabajador</h1>
 
