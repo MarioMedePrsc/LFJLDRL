@@ -10,13 +10,13 @@
         <title>Registro de Trabajadores</title>
     </head>
 </head>
-<body>
+<body style="display: block; width: 100%; height: auto; margin: 0; ">
 <a href="../Controllers/C_Trabajador.php?action=login" >
-    <img src="../imagenes/logo.png" alt="" class="logo"></a>
+    <img src="../imagenes/logo.png" alt="" class="logo" style="width: 250px; overflow: hidden;"></a>
     
-    <div class="container" style="margin-top: 40%;">
+    <div class="container" style=" display:block; text-align: center; margin:auto; margin-top: 100px; overflow: hidden;" >
 
-        <h1 style="margin-top: -20px;">Crea tu cuenta como Trabajador</h1>
+        <h1 >Crea tu cuenta como Trabajador</h1>
 
             <p>Eres Empleador? &nbsp <a href="../Controllers/C_UsuarioController.php?action=V_registroE">Registrate Aquí</a></p>
 
@@ -81,8 +81,12 @@
             <input class="boton" type="submit" value="Registar"></input><br><br>
         </form>
         <p>¿Ya eres miembro de LFJLDRL? &nbsp <a href="../Controllers/C_UsuarioController.php?action=login">Iniciar Sesion</a></p>
+    </div><br><br><br><br>
     </body>
-    <br><br><br><br><div class="footer">
-            <p style="text-align: center;">LFJLDRL &copy; 2023</p>
-        </div>
+    <footer class="footer" style="display: block; width: 100%; overflow: hidden;">
+        <p style="text-align: center;">LFJLDRL &copy; 2023</p>
+    </footer>
+    <!--<br><br><br><br><div class="footer">
+            
+        </div>-->
     </html>
