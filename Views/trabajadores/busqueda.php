@@ -77,7 +77,7 @@ if($vacantesEntrevistadas != null){
                 <div class="donde">
                     <h2>Dónde</h2>
                     <p class="texto-gris">Ciudad o estado</p>
-                    <input type="text" id="que" class="barra-busqueda" name="donde">
+                    <input type="text" id="que" class="barra-busqueda" name="donde" value="<?php echo $_GET['donde'] ?>">
                 </div>
                 <!--BUSCAR-->
                 <div class="alinear-bttn">

@@ -30,7 +30,12 @@ class Trabajador {
     protected function SearchVacantesByName(){
         $ic = new Connection;
         $conexion = $ic->openConnection();
-        $consulta = "SELECT * FROM vacantes WHERE nombre_vac like '$this->nombreVac%' ";
+        if($this->ubicacionVac==""){
+            $consulta = "SELECT * FROM vacantes WHERE nombre_vac like '$this->nombreVac%' ";
+        }else{
+            $consulta = "SELECT * FROM vacantes WHERE nombre_vac like '$this->nombreVac%' and ubicacion_vac like '$this->ubicacionVac%'";
+        }
+        
         $resultado = mysqli_query($conexion,$consulta);
         $ic->CloseConnection();
         //and id_vacante != (SELECT id_vacante FROM lista_postulados WHERE id_trabajador='$this->id')
